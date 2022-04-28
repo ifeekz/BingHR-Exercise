@@ -8,7 +8,7 @@
         <title>{{ $title ?? '' }} - BingHR</title>
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.png"/>
+        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}"/>
 
         <!-- Plugin styles -->
         <link rel="stylesheet" href="{{ asset('assets/js/vendors/bundle.css') }}" type="text/css">
@@ -29,7 +29,7 @@
         <!-- begin::main -->
         <div id="main">
 
-            {{-- Navigation component goes here --}}
+            <x-navigation></x-navigation>
 
             <!-- begin::main-content -->
             <div class="main-content">
