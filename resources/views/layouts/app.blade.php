@@ -24,7 +24,7 @@
         </div>
         <!-- end::preloader -->
 
-        {{-- Header component goes here --}}
+        <x-header :page-title="$pageTitle"></x-header>
 
         <!-- begin::main -->
         <div id="main">
