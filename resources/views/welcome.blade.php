@@ -35,75 +35,40 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="table-responsive">
-                                        <table class="table table-striped mb-0">
-                                            <thead>
+                                        <table class="table mb-0">
+                                            <thead class="thead-light">
                                             <tr>
-                                                <th>Date</th>
-                                                <th class="text-center">Sales Count</th>
-                                                <th class="text-center">Gross Earnings</th>
-                                                <th class="text-center">Tax Withheld</th>
-                                                <th class="text-center">Net Earnings</th>
+                                                <th>Name</th>
                                                 <th></th>
+                                                <th>Create Date</th>
+                                                <th>Role</th>
+                                                <th class="text-center">Action</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <tr>
+                                                <td>
+                                                    <div class="media">
+                                                        <img 
+                                                            src="{{ asset('assets/images/user/man_avatar1.jpg') }}" 
+                                                            class="rounded-circle align-self-center mr-3"
+                                                            alt="profile"
+                                                        >
+                                                        <div class="media-body">
+                                                          <div class="h6 my-0">David Wagner</div>
+                                                          <div class="text-muted">david.wagner@domain.com</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="badge badge-success">Super Admin</span></td>
                                                 <td>03/15/2018</td>
-                                                <td class="text-center">1,050</td>
-                                                <td class="text-success text-center">+ $32,580.00</td>
-                                                <td class="text-danger text-center">- $3,023.10</td>
-                                                <td class="text-right text-center">$28,670.90</td>
-                                                <td class="text-right">
-                                                    <a href="#" data-toggle="tooltip" title="Detail">
-                                                        <i class="fa fa-external-link"></i>
+                                                <td>CEO and Founder</td>
+                                                <td class="text-center">
+                                                    <a href="#" data-toggle="tooltip" title="Edit user" class="mr-2">
+                                                        <i data-feather="edit-3" width="15" height="15"></i>
                                                     </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>03/14/2018</td>
-                                                <td class="text-center">780</td>
-                                                <td class="text-success text-center">+ $30,065.10</td>
-                                                <td class="text-danger text-center">- $2,780.00</td>
-                                                <td class="text-right text-center">$26,930.40</td>
-                                                <td class="text-right">
-                                                    <a href="#" data-toggle="tooltip" title="Detail">
-                                                        <i class="fa fa-external-link"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>03/13/2018</td>
-                                                <td class="text-center">1.980</td>
-                                                <td class="text-success text-center">+ $30,065.10</td>
-                                                <td class="text-danger text-center">- $2,780.00</td>
-                                                <td class="text-right text-center">$26,930.40</td>
-                                                <td class="text-right">
-                                                    <a href="#" data-toggle="tooltip" title="Detail">
-                                                        <i class="fa fa-external-link"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>03/12/2018</td>
-                                                <td class="text-center">300</td>
-                                                <td class="text-success text-center">+ $30,065.10</td>
-                                                <td class="text-danger text-center">- $2,780.00</td>
-                                                <td class="text-right text-center">$26,930.40</td>
-                                                <td class="text-right">
-                                                    <a href="#" data-toggle="tooltip" title="Detail">
-                                                        <i class="fa fa-external-link"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>03/11/2018</td>
-                                                <td class="text-center">940</td>
-                                                <td class="text-success text-center">+ $30,065.10</td>
-                                                <td class="text-danger text-center">- $2,780.00</td>
-                                                <td class="text-right text-center">$26,930.40</td>
-                                                <td class="text-right">
-                                                    <a href="#" data-toggle="tooltip" title="Detail">
-                                                        <i class="fa fa-external-link"></i>
+                                                    <a href="#" data-toggle="tooltip" title="Delete user">
+                                                        <i data-feather="trash-2" width="15" height="15"></i>
                                                     </a>
                                                 </td>
                                             </tr>
