@@ -35,12 +35,12 @@
             <div class="main-content">
 
                 <!-- begin::page content -->
-                <div class="container-fluid">
+                <div class="container-fluid" style="min-height: 70vh">
                     {{ $slot }}
                 </div>
                 <!-- end::page content -->
 
-                {{-- Footer component goes here --}}
+                <x-footer></x-footer>
 
             </div>
             <!-- end::main-content -->
