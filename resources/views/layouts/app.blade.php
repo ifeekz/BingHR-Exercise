@@ -12,6 +12,9 @@
 
         <!-- Plugin styles -->
         <link rel="stylesheet" href="{{ asset('assets/js/vendors/bundle.css') }}" type="text/css">
+        
+        <link rel="stylesheet" href="{{ asset('assets/css/vendors/nprogress.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('assets/css/vendors/toastr.css') }}" type="text/css">
 
         <!-- App styles -->
         <link rel="stylesheet" href="{{ asset('assets/css/app.min.css') }}" type="text/css">
@@ -32,7 +35,7 @@
             <x-navigation></x-navigation>
 
             <!-- begin::main-content -->
-            <div class="main-content">
+            <div id="app" class="main-content">
 
                 <!-- begin::page-header -->
                 <div class="page-header px-4">
@@ -47,6 +50,8 @@
                 <!-- end::page content -->
 
                 <x-footer></x-footer>
+                
+                {{ $modal }}
 
             </div>
             <!-- end::main-content -->
@@ -54,13 +59,18 @@
         </div>
         <!-- end::main -->
 
-        {{ $modal }}
-
         <!-- Plugin scripts -->
         <script src="{{ asset('assets/js/vendors/bundle.js') }}"></script>
 
         <!-- App scripts -->
         <script src="{{ asset('assets/js/app.min.js') }}"></script>
+
+        <script src="{{ asset('assets/js/vendors/vue.js') }}"></script>
+        <script src="{{ asset('assets/js/vendors/vue-resource.js') }}"></script>
+        <script src="{{ asset('assets/js/vendors/nprogress.js') }}"></script>
+        <script src="{{ asset('assets/js/vendors/toastr.min.js') }}"></script>
+
+        {{ $scripts }}
     </body>
 
 </html>

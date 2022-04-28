@@ -97,7 +97,7 @@
                     </div>
                     <hr class="m-0" />
                     <div class="modal-body">
-                        <form>
+                        <form action="" method="post" @submit.prevent="addUser">
                             <div class="form-row pb-2">
                                 <div class="col col-sm-12 col-md-12 col-lg-12">
                                     <input type="text" class="form-control" placeholder="Employee ID *" required />
@@ -189,6 +189,25 @@
                 </div>
             </div>
         </div>
+    </x-slot>
+
+    <x-slot name="scripts">
+        <script>
+            Vue.http.options.emulateJSON = true;
+            new Vue({
+                el: '#app',
+                delimiters: ["[", "]"],
+                data: {
+                    
+                },
+                mounted: function () {
+                    // NProgress.start()
+                },
+                methods: {
+                    
+                },
+            })
+        </script>
     </x-slot>
 
 </x-app-layout>
