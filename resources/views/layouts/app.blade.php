@@ -34,6 +34,12 @@
             <!-- begin::main-content -->
             <div class="main-content">
 
+                <!-- begin::page-header -->
+                <div class="page-header px-4">
+                    {{ $pageHeader }}
+                </div>
+                <!-- end::page-header -->
+
                 <!-- begin::page content -->
                 <div class="container-fluid" style="min-height: 70vh">
                     {{ $slot }}
