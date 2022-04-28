@@ -2,4 +2,4 @@
 
 ## BingHR Exercise Solution
 
-A take home execise for BingHR.io
+A take home execise solution for BingHR.io
