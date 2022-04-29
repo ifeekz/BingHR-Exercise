@@ -4,6 +4,9 @@
 
 A take home execise solution for BingHR.io
 
+## DEMO
+
+
 ## Requirements
 
 - PHP >= v7.4 (Tested on PHP 7.4.26)
@@ -45,4 +48,10 @@ Though the UI might applicable jus for the purpose of the test, however, for rea
 
 ** Hence, because of observation `No. 2` I couldn't go further to implement the permissions strategy as found in the UI/UX. Here are my reasons:
 - The users list table clearly indicated what type a user is on `column 2` of the table.
-- But, on the add user modal, roles are been listed as system modules which are to be assigned read/write/delete permissions.
+- But, on the add user modal, roles are been listed as system modules which are to be assigned `read/write/delete` permissions.
+
+## TO DO
+Aside using Vue.js to iplement the CRUD opreations, I would have loved to do the following if I had extra time.
+* implement a content load like facebook, instagram, etc for the initial take of data loading using Vue.
+* Add pagination to the user table list using Vue.
+* Using the `principle of least privilege` to implement the proposed role-based as well as granular permissions.
