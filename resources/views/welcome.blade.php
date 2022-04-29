@@ -241,6 +241,153 @@
                 </div>
             </div>
         </div>
+
+        <div id="editUserModal" data-backdrop="static" class="modal fade" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-transparent">
+                        <h6 class="modal-title">Edit User</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="ti-close"></i>
+                        </button>
+                    </div>
+                    <hr class="m-0" />
+                    <form action="" 
+                        method="post" @submit.prevent="updateUser(fillUser)"
+                    >
+                        <div class="modal-body">
+                            <div class="form-row pb-2">
+                                <div class="col col-sm-12 col-md-12 col-lg-12">
+                                    <input type="text" v-model="fillUser.employee_id" class="form-control" placeholder="Employee ID *" required />
+                                    <div v-if="createUserErrors.employee_id">
+                                        <div v-for="error in createUserErrors.employee_id" class="d-block invalid-feedback">
+                                            <div>[ error ]</div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="form-row py-2">
+                                <div class="col col-sm-6 col-md-6 col-lg-6">
+                                    <input type="text" v-model="fillUser.first_name" class="form-control" placeholder="First Name *" required />
+                                    <div v-if="createUserErrors.first_name">
+                                        <div v-for="error in createUserErrors.first_name" class="d-block invalid-feedback">
+                                            <div>[ error ]</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6 col-md-6 col-lg-6">
+                                    <input type="text" v-model="fillUser.last_name" class="form-control" placeholder="Last Name *" required />
+                                    <div v-if="createUserErrors.last_name">
+                                        <div v-for="error in createUserErrors.last_name" class="d-block invalid-feedback">
+                                            <div>[ error ]</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row py-2">
+                                <div class="col col-sm-4 col-md-4 col-lg-4">
+                                    <input type="email" v-model="fillUser.email" class="form-control" placeholder="Email ID *" required />
+                                    <div v-if="createUserErrors.email">
+                                        <div v-for="error in createUserErrors.email" class="d-block invalid-feedback">
+                                            <div>[ error ]</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-4 col-md-4 col-lg-4">
+                                    <input type="text" v-model="fillUser.mobile_no" class="form-control" placeholder="Mobile No">
+                                    <div v-if="createUserErrors.mobile_no">
+                                        <div v-for="error in createUserErrors.mobile_no" class="d-block invalid-feedback">
+                                            <div>[ error ]</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-4 col-md-4 col-lg-4">
+                                    <select v-model="fillUser.role_type" class="form-control custom-select" required>
+                                        <option value="">Select Role Type *</option>
+                                        <option value="CEO & Founder">CEO & Founder</option>
+                                        <option value="Team Lead">Team Lead</option>
+                                        <option value="HR">HR</option>
+                                        <option value="App Designer">App Designer</option>
+                                        <option value="Web Developer">Web Developer</option>
+                                    </select>
+                                    <div v-if="createUserErrors.rolle_type">
+                                        <div v-for="error in createUserErrors.role_type" class="d-block invalid-feedback">
+                                            <div>[ error ]</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row py-2">
+                                <div class="col col-sm-4 col-md-4 col-lg-4">
+                                    <input type="text" v-model="fillUser.username" class="form-control" placeholder="Username *" required />
+                                    <div v-if="createUserErrors.username">
+                                        <div v-for="error in createUserErrors.username" class="d-block invalid-feedback">
+                                            <div>[ error ]</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-4 col-md-4 col-lg-4">
+                                    <input type="password" v-model="fillUser.password" class="form-control" placeholder="Password" />
+                                    <div v-if="createUserErrors.password">
+                                        <div v-for="error in createUserErrors.password" class="d-block invalid-feedback">
+                                            <div>[ error ]</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-4 col-md-4 col-lg-4">
+                                    <input type="password" v-model="fillUser.password_confirmation" class="form-control" placeholder="Confirm Password" />
+                                </div>
+                            </div>
+                            <div class="form-row pt-2">
+                                <div class="table-responsive">
+                                    <table class="table mb-0">
+                                        <thead class="thead-light">
+                                        <tr>
+                                            <th>Module Permission</th>
+                                            <th class="text-center">Read</th>
+                                            <th class="text-center">Write</th>
+                                            <th class="text-center">Delete</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Super Admin</td>
+                                            <td class="text-center"><input type="checkbox" checked /></td>
+                                            <td class="text-center"><input type="checkbox" checked /></td>
+                                            <td class="text-center"><input type="checkbox" checked /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Admin</td>
+                                            <td class="text-center"><input type="checkbox" checked /></td>
+                                            <td class="text-center"><input type="checkbox" /></td>
+                                            <td class="text-center"><input type="checkbox" checked /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Employee</td>
+                                            <td class="text-center"><input type="checkbox" checked /></td>
+                                            <td class="text-center"><input type="checkbox" /></td>
+                                            <td class="text-center"><input type="checkbox" checked /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>HR Admin</td>
+                                            <td class="text-center"><input type="checkbox" checked /></td>
+                                            <td class="text-center"><input type="checkbox" /></td>
+                                            <td class="text-center"><input type="checkbox" checked /></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Update User</button>
+                            <button type="button" class="btn btn-link text-dark" data-dismiss="modal">Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </x-slot>
 
     <x-slot name="scripts">
@@ -329,6 +476,49 @@
                                 this.createUserErrors = error.body.errors
                             }
                             NProgress.done()
+                        });
+                    },
+
+                    editUser: function (user) {
+                        this.fillUser.id = user.id;
+                        this.fillUser.employee_id = user.employee_id;
+                        this.fillUser.first_name = user.first_name;
+                        this.fillUser.last_name = user.last_name;
+                        this.fillUser.email = user.email;
+                        this.fillUser.role_type = user.role_type;
+                        this.fillUser.username = user.username;
+                        this.fillUser.mobile_no = user.mobile_no;
+
+                        $("#editUserModal").modal('show');
+                    },
+
+                    updateUser: function (user) {
+                        NProgress.start()
+                        const headers = { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') };
+                        this.$http.put(`/api/v1/users/${user.id}`, user, { headers: headers }).then(response => {
+                            this.getUsers().then((result) => {
+                                this.resetForm();
+                                $("#editUserModal").modal('hide');
+                                toastr.success('User updated successfully.', 
+                                    'Success Alert', 
+                                    {
+                                        timeOut: 5000,
+                                        "positionClass": "toast-top-right",
+                                        "progressBar": true
+                                    });
+                                NProgress.done()
+                            });
+                        }, error => {
+                            toastr.error('Ops an Error occured', 'Error Alert', {
+                                timeOut: 5000,
+                                positionClass: "toast-top-right",
+                                "progressBar": true
+                            });
+
+                            if(error.status === 422) {
+                                this.createUserErrors = error.body.errors
+                            }
+
                         });
                     },
 
