@@ -7,7 +7,11 @@ A take home execise solution for BingHR.io
 ## Requirements
 
 - PHP >= v7.4 (Tested on PHP 7.4.26)
+- MySQL >= v5.7 (Tested on MySQL 5.7.36)
+- Apache >= v2.4 (Tested on PHP 2.4.51)
 - Composer >= v2.2 (Tested on Composer 2.2.9)
+
+*Preferably: Install WAMP/XAMP, LAMP or MAMP for Windows, Linux or MAC respectively to get PHP, MySQL, and Apache setup on your system. (Tested on Wampserver 3.2.6)
 
 ## Development Environment (Local Machine) Setup
 
