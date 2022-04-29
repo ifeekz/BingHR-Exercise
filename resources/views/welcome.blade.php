@@ -388,6 +388,32 @@
                 </div>
             </div>
         </div>
+
+        <div id="deleteUserModal" data-backdrop="static" class="modal fade" role="dialog"
+                aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Delete User</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="" 
+                        method="post" @submit.prevent="confirmUserDelete(fillUser)"
+                    >
+                        <div class="modal-body">
+                            <div>Are you sure you want to delete user, <strong>[ fillUser.last_name ] [ fillUser.first_name ]</strong>?</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger">OK</button>
+                            <button type="button" class="btn btn-link text-dark" data-dismiss="modal">Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </x-slot>
 
     <x-slot name="scripts">
@@ -518,6 +544,46 @@
                             if(error.status === 422) {
                                 this.createUserErrors = error.body.errors
                             }
+
+                        });
+                    },
+
+                    deleteUser: function (user) {
+                        this.fillUser.id = user.id;
+                        this.fillUser.employee_id = user.employee_id;
+                        this.fillUser.first_name = user.first_name;
+                        this.fillUser.last_name = user.last_name;
+                        this.fillUser.email = user.email;
+                        this.fillUser.role_type = user.role_type;
+                        this.fillUser.username = user.username;
+                        this.fillUser.mobile_no = user.mobile_no;
+
+                        $("#deleteUserModal").modal('show');
+                    },
+
+                    confirmUserDelete: function (user) {
+                        NProgress.start()
+                        const headers = { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') };
+                        this.$http.delete(`/api/v1/users/${user.id}`, { headers: headers }).then(response => {                            
+                            this.getUsers().then((result) => {
+                                $("#deleteUserModal").modal('hide');
+                                this.resetForm();
+                                toastr.success('User deleted successfully.', 
+                                    'Success Alert', 
+                                    {
+                                        timeOut: 5000,
+                                        "positionClass": "toast-top-right",
+                                        "progressBar": true
+                                    });
+                                NProgress.done()
+                            });
+                        }, error => {
+                            toastr.error('Ops an Error occured', 'Error Alert', {
+                                timeOut: 5000,
+                                positionClass: "toast-top-right",
+                                "progressBar": true
+                            });
+                            console.log('ERROR: ', error)
 
                         });
                     },
