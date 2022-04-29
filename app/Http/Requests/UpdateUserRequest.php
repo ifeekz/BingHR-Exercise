@@ -28,7 +28,7 @@ class UpdateUserRequest extends FormRequest
             'first_name' => 'required|min:2|max:20',
             'last_name' => 'required|min:2|max:20',
             'email' => 'required|email|unique:users,email,'.$this->id,
-            'mobile_no' => 'nullable|unique:users',
+            'mobile_no' => 'nullable|unique:users,mobile_no,'.$this->id,
             'role_type' => 'nullable',
             'username' => 'required|unique:users,username,'.$this->id,
             'password' => 'nullable|confirmed|min:6',
