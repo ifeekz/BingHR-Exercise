@@ -544,7 +544,7 @@
                             if(error.status === 422) {
                                 this.createUserErrors = error.body.errors
                             }
-
+                            NProgress.done()
                         });
                     },
 
@@ -584,7 +584,7 @@
                                 "progressBar": true
                             });
                             console.log('ERROR: ', error)
-
+                            NProgress.done()
                         });
                     },
 

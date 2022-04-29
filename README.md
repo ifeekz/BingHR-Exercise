@@ -52,6 +52,6 @@ Though the UI might applicable jus for the purpose of the test, however, for rea
 
 ## TO DO
 Aside using Vue.js to implement the CRUD opreations, I would have loved to do the following if I had extra time.
-* implement a content load like facebook, instagram, etc for the initial take of data loading using Vue.
+* Implement a content load like facebook, instagram, etc for the initial take of data loading using Vue.
 * Add pagination to the user table list using Vue.
 * Using the `principle of least privilege` to implement the proposed role-based as well as granular permissions.
