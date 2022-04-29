@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ $title ?? '' }} - BingHR</title>
 
         <!-- Favicon -->
@@ -22,9 +23,9 @@
     <body>
 
         <!-- begin::preloader-->
-        <div class="preloader">
+        {{-- <div class="preloader">
             <div class="preloader-icon"></div>
-        </div>
+        </div> --}}
         <!-- end::preloader -->
 
         <x-header :page-title="$pageTitle"></x-header>
@@ -44,7 +45,7 @@
                 <!-- end::page-header -->
 
                 <!-- begin::page content -->
-                <div class="container-fluid" style="min-height: 70vh">
+                <div class="container-fluid" style="min-height: 60vh">
                     {{ $slot }}
                 </div>
                 <!-- end::page content -->
